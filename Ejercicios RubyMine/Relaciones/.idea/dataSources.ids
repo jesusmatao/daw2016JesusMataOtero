@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - directorio@localhost" uuid="1a035407-bdbb-4d6a-afdd-6a5c877c0b56">
+    <database-info product="PostgreSQL" version="9.5.3" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.5">
+      <database id="1" name="directorio"/>
+      <schema id="2" parent="1" name="public">
+        <object-id>2200</object-id>
+        <comment>standard public schema</comment>
+        <introspection-state-number>622</introspection-state-number>
+        <introspection-timestamp>2016-05-31.17:13:04.748</introspection-timestamp>
+      </schema>
+      <sequence id="3" parent="2" name="estados_id_seq">
+        <object-id>16401</object-id>
+        <state-number>622</state-number>
+      </sequence>
+      <table id="4" parent="2" name="estados">
+        <object-id>16403</object-id>
+        <state-number>622</state-number>
+      </table>
+      <table id="5" parent="2" name="schema_migrations">
+        <object-id>16394</object-id>
+        <state-number>620</state-number>
+      </table>
+      <column id="6" parent="4" name="id">
+        <state-number>622</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer</data-type>
+        <default-expression>nextval(&apos;estados_id_seq&apos;::regclass)</default-expression>
+      </column>
+      <column id="7" parent="4" name="nombre">
+        <state-number>622</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="8" parent="4" name="pais">
+        <state-number>622</state-number>
+        <data-type>varchar</data-type>
+      </column>
+      <column id="9" parent="4" name="created_at">
+        <state-number>622</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="10" parent="4" name="updated_at">
+        <state-number>622</state-number>
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="11" parent="4" name="estados_pkey">
+        <object-id>16410</object-id>
+        <columns>id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="12" parent="4" name="estados_pkey">
+        <columns>id</columns>
+        <underlying-index>estados_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="13" parent="5" name="version">
+        <state-number>620</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar</data-type>
+      </column>
+      <index id="14" parent="5" name="unique_schema_migrations">
+        <object-id>16400</object-id>
+        <columns>version</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+    </database-model>
+  </data-source>
+</component>

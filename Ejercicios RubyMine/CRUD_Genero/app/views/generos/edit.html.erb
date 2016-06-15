@@ -1,0 +1,31 @@
+<h1>Ediccion del Genero Seleccionado</h1>
+
+<%= form_for :genero,url: genero_path(@genero),method: :patch do |f| %>
+    <% if @genero.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@genero.errors.count, 'error') %>
+            No se puede editar el genero por los siguientes errores:
+          </h2>
+          <ul>
+            <% @genero.errors.full_messages.each do |msg| %>
+                <li> <%= msg %> </li>
+            <% end%>
+          </ul>
+        </div>
+    <% end %>
+    <p>
+      <%= f.label :nombre %><br/>
+      <%= f.text_field :nombre %><br/>
+    </p>
+    <p>
+      <%= f.label :descripcion %><br>
+      <%= f.text_field :descripcion %><br/>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+<p>
+  <%= link_to 'Cancelar', new_genero_path%>
+</p>

@@ -1,0 +1,13 @@
+<p>Este es el genero seleccionado:</p>
+<p>
+  <strong>Nombre:</strong>
+  <%= @genero.nombre %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @genero.descripcion %>
+</p>
+
+<%= link_to 'Editar', edit_genero_path(@genero) %> |
+<%= link_to 'Atras', generos_path %>

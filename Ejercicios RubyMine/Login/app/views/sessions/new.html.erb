@@ -1,0 +1,8 @@
+<h2>Login</h2>
+
+<%= form_for(:session,url: login_path) do |f| %>
+    Email:<%= f.text_field :email_field %><br/>
+    Password: <%= f.password_field :password %><br/>
+    <%= f.check_box :remember_me %>Recuerdame
+    <%= f.submit 'Iniciar Session' %>
+<% end %>
