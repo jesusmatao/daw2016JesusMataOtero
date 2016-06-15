@@ -1,4 +1,4 @@
-<h1>Question <%= @current + 1 %> of <%= @total %></h1>
+<h1>Pregunta <%= @current + 1 %> de <%= @total %></h1>
 <p id="question"><%= @question.text %></p>
 <%= form_tag({:controller => 'quiz',:action => 'answer'}) do %>
   <% @choices.each do |choice| %>
@@ -8,7 +8,7 @@
         </p>
   <% end %>
 <div class="center">
-<%= submit_tag('Continue',:class => 'submit') %>
+<%= submit_tag('Continue',:class => 'submit success button') %>
 </div>
 <% end %>
 <% content_for(:title) do %>

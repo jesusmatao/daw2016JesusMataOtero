@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %> </p>
+<p id="notice" class="alert success"><%= notice %> </p>
 <p>
-  <strong>Text:</strong>
+  <strong>Pregunta:</strong>
 <%= @question.text %>
 </p>
-<h4>Choices</h4>
+<h4>Respuestas</h4>
 <ul>
   <% @question.choices.find_each do |choice| %>
   <li>
@@ -17,17 +17,17 @@
   </li>
       <% end %>
 </ul>
-<h5>New Choice</h5>
+<h5>Nueva Pregunta</h5>
 <%= form_tag({:controller => 'choices', :action => 'create'}) do %>
 <%= hidden_field_tag :question,@question.id %>
-<%= label_tag :text, 'Text'%><br/>
+<%= label_tag :text, 'Pregunta'%><br/>
 <%= text_field_tag :text%><br/>
-<%= check_box_tag :correct %><br/>
+<%= check_box_tag :correct %>Correcto<br/>
 <br/>
-<%= submit_tag 'Create'%>
+<%= submit_tag 'Crear', class: 'success button'%>
 <% end %>
-<%= link_to 'Edit', edit_question_path(@question) %>|
-<%= link_to 'Back', question_path %>
+<%= link_to 'Editar', edit_question_path(@question),class: 'warning button' %>|
+<%= link_to 'Atras', questions_path,class: 'secondary button' %>
 <% content_for(:title) do %>
     Question Details
 <% end %>

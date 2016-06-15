@@ -32,5 +32,5 @@ ActiveRecord::Schema.define(version: 20160614214443) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "choices", "questions"
+  add_foreign_key "choices", "questions", on_delete: :cascade
 end
