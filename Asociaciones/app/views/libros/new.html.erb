@@ -1,0 +1,53 @@
+<%= form_for @libro do |f| %>
+    <% if @libro.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+            Errores:
+        </h2>
+        <ul>
+        <% @libro.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+     Titulo <%= f.text_field :titulo%><br>
+     Autor <%= f.text_field :autor%><br>
+     Descripcion: <%= f.text_area :descripcion%><br>
+     Anio <%= f.text_field :anio%><br>
+<%= f.submit 'Guardar Libro' %>
+<% end %>
+
+<hr/>
+Listado De Libros <br>
+
+<% if !@libros.blank? %>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>
+            Titulo
+          </th>
+          <th>
+            Anio
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+    <% for item in @libros %>
+      <tr>
+        <td>
+          <%= link_to item.titulo, :controller => :prestamos, :action => :new, :id => item.id %>
+        </td>
+        <td>
+          (<%= item.anio %>)
+        </td>
+      </tr>
+    <% end %>
+      </tbody>
+    </table>
+<% else %>
+    No hay Libros
+<% end %>
